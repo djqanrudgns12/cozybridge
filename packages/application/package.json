@@ -1,0 +1,24 @@
+{
+  "name": "@linebound/application",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@linebound/domain": "workspace:*",
+    "@linebound/infrastructure": "workspace:*",
+    "@linebound/content": "workspace:*"
+  },
+  "devDependencies": {
+    "@linebound/simulation": "workspace:*",
+    "fake-indexeddb": "^6.0.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.1"
+  }
+}

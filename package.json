@@ -1,0 +1,19 @@
+{
+  "name": "linebound",
+  "version": "0.1.0",
+  "private": true,
+  "description": "2D 창작형 다리 건설·물리 퍼즐 게임",
+  "scripts": {
+    "dev": "pnpm --filter @linebound/game dev",
+    "build": "pnpm --filter @linebound/game build",
+    "build:pages": "pnpm --filter @linebound/game build:pages",
+    "test": "pnpm -r test",
+    "test:domain": "pnpm --filter @linebound/domain test",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}

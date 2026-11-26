@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@linebound/domain": ["../../packages/domain/src"],
+      "@linebound/simulation": ["../../packages/simulation/src"],
+      "@linebound/content": ["../../packages/content/src"],
+      "@linebound/infrastructure": ["../../packages/infrastructure/src"],
+      "@linebound/application": ["../../packages/application/src"]
+    }
+  },
+  "include": ["src/**/*"],
+  "references": [
+    { "path": "../../packages/domain" },
+    { "path": "../../packages/simulation" },
+    { "path": "../../packages/content" },
+    { "path": "../../packages/infrastructure" },
+    { "path": "../../packages/application" }
+  ]
+}
