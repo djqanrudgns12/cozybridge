@@ -1,18 +1,18 @@
 {
   "$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-config-schema/schema.json",
-  "productName": "Linebound",
-  "version": "0.1.0",
-  "identifier": "com.linebound.game",
+  "productName": "Cozybridge",
+  "version": "1.0.0",
+  "identifier": "com.cozybridge.game",
   "build": {
-    "beforeDevCommand": "pnpm --filter @linebound/game dev",
+    "beforeDevCommand": "pnpm --filter @cozybridge/game dev",
     "devUrl": "http://localhost:3000",
-    "beforeBuildCommand": "pnpm --filter @linebound/game build",
+    "beforeBuildCommand": "pnpm --filter @cozybridge/game build",
     "frontendDist": "../game/dist"
   },
   "app": {
     "windows": [
       {
-        "title": "Linebound",
+        "title": "Cozybridge",
         "width": 1280,
         "height": 720,
         "minWidth": 960,

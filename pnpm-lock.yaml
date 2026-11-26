@@ -16,24 +16,24 @@ importers:
 
   apps/game:
     dependencies:
+      '@cozybridge/application':
+        specifier: workspace:*
+        version: link:../../packages/application
+      '@cozybridge/content':
+        specifier: workspace:*
+        version: link:../../packages/content
+      '@cozybridge/domain':
+        specifier: workspace:*
+        version: link:../../packages/domain
+      '@cozybridge/infrastructure':
+        specifier: workspace:*
+        version: link:../../packages/infrastructure
+      '@cozybridge/simulation':
+        specifier: workspace:*
+        version: link:../../packages/simulation
       '@headlessui/react':
         specifier: ^2.2.4
         version: 2.2.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@linebound/application':
-        specifier: workspace:*
-        version: link:../../packages/application
-      '@linebound/content':
-        specifier: workspace:*
-        version: link:../../packages/content
-      '@linebound/domain':
-        specifier: workspace:*
-        version: link:../../packages/domain
-      '@linebound/infrastructure':
-        specifier: workspace:*
-        version: link:../../packages/infrastructure
-      '@linebound/simulation':
-        specifier: workspace:*
-        version: link:../../packages/simulation
       matter-js:
         specifier: ^0.20.0
         version: 0.20.0
@@ -89,17 +89,17 @@ importers:
 
   packages/application:
     dependencies:
-      '@linebound/content':
+      '@cozybridge/content':
         specifier: workspace:*
         version: link:../content
-      '@linebound/domain':
+      '@cozybridge/domain':
         specifier: workspace:*
         version: link:../domain
-      '@linebound/infrastructure':
+      '@cozybridge/infrastructure':
         specifier: workspace:*
         version: link:../infrastructure
     devDependencies:
-      '@linebound/simulation':
+      '@cozybridge/simulation':
         specifier: workspace:*
         version: link:../simulation
       fake-indexeddb:
@@ -114,7 +114,7 @@ importers:
 
   packages/content:
     dependencies:
-      '@linebound/domain':
+      '@cozybridge/domain':
         specifier: workspace:*
         version: link:../domain
 
@@ -129,10 +129,10 @@ importers:
 
   packages/infrastructure:
     dependencies:
-      '@linebound/content':
+      '@cozybridge/content':
         specifier: workspace:*
         version: link:../content
-      '@linebound/domain':
+      '@cozybridge/domain':
         specifier: workspace:*
         version: link:../domain
       '@supabase/supabase-js':
@@ -154,10 +154,10 @@ importers:
 
   packages/simulation:
     dependencies:
-      '@linebound/content':
+      '@cozybridge/content':
         specifier: workspace:*
         version: link:../content
-      '@linebound/domain':
+      '@cozybridge/domain':
         specifier: workspace:*
         version: link:../domain
       matter-js:

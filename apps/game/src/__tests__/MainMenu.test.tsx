@@ -21,7 +21,9 @@ describe('MainMenu 컴포넌트 (1-1 리뉴얼 & 실시간 멀티 테마)', () =
       </ThemeProvider>,
     );
 
-    expect(screen.getByText('LINEBOUND')).toBeDefined();
+    expect(screen.getByText('Cozybridge')).toBeDefined();
+    expect(screen.getByText('Cozybridge 작업실')).toBeDefined();
+    expect(screen.getByText('v1.0.0')).toBeDefined();
     expect(screen.getByText('바로 다리 짓기 시작!')).toBeDefined();
     expect(screen.getByText('단계별 도전')).toBeDefined();
     expect(screen.getByText('자유 만들기')).toBeDefined();
@@ -77,6 +79,6 @@ describe('MainMenu 컴포넌트 (1-1 리뉴얼 & 실시간 멀티 테마)', () =
     fireEvent.click(nightOption);
 
     expect(document.documentElement.dataset.theme).toBe('night');
-    expect(window.localStorage.getItem('linebound-ui-theme')).toBe('night');
+    expect(window.localStorage.getItem('cozybridge-ui-theme')).toBe('night');
   });
 });

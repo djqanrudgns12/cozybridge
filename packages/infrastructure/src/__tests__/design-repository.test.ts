@@ -1,15 +1,15 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import 'fake-indexeddb/auto';
-import type { BridgeDesign, BridgeVersion } from '@linebound/domain';
-import { LineboundDatabase } from '../db/linebound-db.js';
+import type { BridgeDesign, BridgeVersion } from '@cozybridge/domain';
+import { CozybridgeDatabase } from '../db/cozybridge-db.js';
 import { IndexedDbDesignRepository } from '../repositories/design-repository.js';
 
 describe('IndexedDbDesignRepository 로컬 저장소 테스트', () => {
-  let db: LineboundDatabase;
+  let db: CozybridgeDatabase;
   let repo: IndexedDbDesignRepository;
 
   beforeEach(() => {
-    db = new LineboundDatabase(`test_db_${Date.now()}_${Math.random()}`);
+    db = new CozybridgeDatabase(`test_db_${Date.now()}_${Math.random()}`);
     repo = new IndexedDbDesignRepository(db);
   });
 

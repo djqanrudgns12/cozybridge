@@ -5,7 +5,7 @@ import {
   forwardRef,
   useImperativeHandle,
 } from 'react';
-import type { LessonGuideSegment, LevelDefinition } from '@linebound/content';
+import type { LessonGuideSegment, LevelDefinition } from '@cozybridge/content';
 import { useTheme } from '../styles/ThemeContext';
 import {
   createGameCanvas,

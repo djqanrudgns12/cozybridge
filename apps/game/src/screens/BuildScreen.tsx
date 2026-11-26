@@ -7,7 +7,7 @@ import {
   type BridgeDesign,
   type FailureReport,
   type SimulationFrame,
-} from '@linebound/domain';
+} from '@cozybridge/domain';
 import {
   LEVELS,
   LESSONS,
@@ -16,20 +16,20 @@ import {
   getRecommendedLessonIdForFailure,
   SANDBOX_DEFAULT,
   type LevelDefinition,
-} from '@linebound/content';
-import { MatterBridgeEngine } from '@linebound/simulation';
+} from '@cozybridge/content';
+import { MatterBridgeEngine } from '@cozybridge/simulation';
 import {
   SaveBridgeDesignUseCase,
   LevelProgressUseCase,
   SyncUseCase,
-} from '@linebound/application';
+} from '@cozybridge/application';
 import {
   IndexedDbDesignRepository,
   IndexedDbLevelProgressRepository,
   IndexedDbSyncQueueRepository,
   SyncManager,
   type UserSession,
-} from '@linebound/infrastructure';
+} from '@cozybridge/infrastructure';
 
 import { GameCanvas, type GameCanvasHandle } from '../game-canvas';
 import {
@@ -1058,7 +1058,7 @@ export function BuildScreen({
                 onClick={() => handleToolChange('build')}
                 className={`flex flex-col items-center justify-center gap-1.5 rounded-[14px] px-3 py-3 text-xs font-extrabold border-[1.5px] transition-all cursor-pointer disabled:opacity-45 ${
                   activeTool === 'build'
-                    ? 'bg-craft-primary text-white border-craft-primary shadow-[0_2px_0_var(--lb-primary-shadow)]'
+                    ? 'bg-craft-primary text-white border-craft-primary shadow-[0_2px_0_var(--cb-primary-shadow)]'
                     : 'bg-craft-bg text-craft-ink border-craft-border hover:bg-craft-subtle'
                 }`}
               >
@@ -1199,7 +1199,7 @@ export function BuildScreen({
                 ? 'bg-craft-ink text-craft-surface hover:opacity-90'
                 : mode === 'lesson' && lessonCoachPhase === 'ready'
                 ? 'bg-craft-sage hover:opacity-95 text-white shadow-[0_4px_0_rgba(0,0,0,0.2)] active:translate-y-0.5'
-                : 'bg-craft-primary hover:bg-craft-primary-hover text-white shadow-[0_4px_0_var(--lb-primary-shadow)] active:translate-y-0.5'
+                : 'bg-craft-primary hover:bg-craft-primary-hover text-white shadow-[0_4px_0_var(--cb-primary-shadow)] active:translate-y-0.5'
             }`}
           >
             {isSimulating ? (

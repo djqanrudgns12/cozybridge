@@ -1,5 +1,5 @@
-import type { BridgeDesign, EntityId } from '@linebound/domain';
-import type { IDesignRepository } from '@linebound/infrastructure';
+import type { BridgeDesign, EntityId } from '@cozybridge/domain';
+import type { IDesignRepository } from '@cozybridge/infrastructure';
 
 /**
  * 설계 저장 유스케이스 (PRD 6.11)

@@ -1,4 +1,4 @@
-import type { LevelHint } from '@linebound/domain';
+import type { LevelHint } from '@cozybridge/domain';
 
 export const LEVEL_HINTS: LevelHint[] = [
   // 레벨 1 비법 노트
@@ -221,7 +221,7 @@ export const LEVEL_HINTS: LevelHint[] = [
     cost: 160,
   },
 
-  // 레벨 12 비법 노트 (라인바운드 대교)
+  // 레벨 12 비법 노트 (코지브릿지 대교)
   {
     id: 'hint-lvl12-1',
     levelId: 'level-012',

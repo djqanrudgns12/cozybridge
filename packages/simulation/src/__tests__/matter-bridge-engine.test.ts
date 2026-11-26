@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import type { BridgeDesign, LevelDefinition } from '@linebound/domain';
+import type { BridgeDesign, LevelDefinition } from '@cozybridge/domain';
 import { MatterBridgeEngine } from '../matter-bridge-engine.js';
 
 describe('MatterBridgeEngine 물리 엔진 기술 검증', () => {

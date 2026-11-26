@@ -2,7 +2,7 @@ import type {
   EntityId,
   FailureReport,
   GridPoint,
-} from '@linebound/domain';
+} from '@cozybridge/domain';
 
 export interface DisplacementThresholds {
   /** 노드 최대 허용 변위 (격자 셀 단위) */

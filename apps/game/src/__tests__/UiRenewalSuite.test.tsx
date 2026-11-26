@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import {
   IndexedDbLevelProgressRepository,
   type LevelProgressRecord,
-} from '@linebound/infrastructure';
+} from '@cozybridge/infrastructure';
 import { ThemeProvider } from '../styles/ThemeContext';
 import { AuthModal } from '../components/AuthModal';
 import { HintModal } from '../components/HintModal';
@@ -14,7 +14,7 @@ import { appAuthUseCase } from '../utils/auth-client';
 import { markLessonCompleted } from '../utils/lesson-progress';
 import { getUserDatabase } from '../utils/user-storage';
 
-describe('Linebound 전 영역 리뉴얼 모달 및 UI 검증', () => {
+describe('Cozybridge 전 영역 리뉴얼 모달 및 UI 검증', () => {
   beforeEach(async () => {
     window.localStorage.clear();
     await appAuthUseCase.signOut();

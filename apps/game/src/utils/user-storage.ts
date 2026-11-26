@@ -1,8 +1,8 @@
 import {
   getScopedDatabase,
   resolveUserStorageScope,
-  type LineboundDatabase,
-} from '@linebound/infrastructure';
+  type CozybridgeDatabase,
+} from '@cozybridge/infrastructure';
 import { appAuthUseCase } from './auth-client';
 
 /**
@@ -32,6 +32,6 @@ export function resolveEffectiveStorageScope(
  */
 export function getUserDatabase(
   explicitUserId?: string | null,
-): LineboundDatabase {
+): CozybridgeDatabase {
   return getScopedDatabase(resolveEffectiveUserId(explicitUserId));
 }

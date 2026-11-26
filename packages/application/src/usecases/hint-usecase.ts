@@ -1,6 +1,6 @@
-import type { LevelHint } from '@linebound/domain';
-import { getHintsByLevelId } from '@linebound/content';
-import type { ICurrencyRepository } from '@linebound/infrastructure';
+import type { LevelHint } from '@cozybridge/domain';
+import { getHintsByLevelId } from '@cozybridge/content';
+import type { ICurrencyRepository } from '@cozybridge/infrastructure';
 
 /**
  * 힌트 열람 및 재화 차감 유스케이스 (PRD 6.16)

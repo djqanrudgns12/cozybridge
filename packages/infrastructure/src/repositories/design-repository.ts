@@ -2,13 +2,13 @@ import type {
   BridgeDesign,
   BridgeVersion,
   EntityId,
-} from '@linebound/domain';
+} from '@cozybridge/domain';
 import {
-  LineboundDatabase,
+  CozybridgeDatabase,
   toDesignRecord,
   fromDesignRecord,
   type BridgeVersionRecord,
-} from '../db/linebound-db.js';
+} from '../db/cozybridge-db.js';
 
 export interface IDesignRepository {
   save(design: BridgeDesign): Promise<void>;
@@ -22,7 +22,7 @@ export interface IDesignRepository {
 }
 
 export class IndexedDbDesignRepository implements IDesignRepository {
-  constructor(private db: LineboundDatabase) {}
+  constructor(private db: CozybridgeDatabase) {}
 
   async save(design: BridgeDesign): Promise<void> {
     const record = toDesignRecord(design);

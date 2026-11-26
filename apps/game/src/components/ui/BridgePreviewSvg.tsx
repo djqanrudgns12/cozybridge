@@ -1,5 +1,5 @@
-import type { BridgeDesign } from '@linebound/domain';
-import type { LevelDefinition } from '@linebound/content';
+import type { BridgeDesign } from '@cozybridge/domain';
+import type { LevelDefinition } from '@cozybridge/content';
 
 /**
  * 스테이지 지형 단면 프리뷰 (섹션 2-3 우측 대형 스테이지 프리뷰 & 4-2 모눈 스케치북 톤 통일)
@@ -49,7 +49,7 @@ export function StageTerrainPreviewSvg({
             y1={toY(0)}
             x2={toX(gx)}
             y2={toY(height)}
-            stroke="var(--lb-canvas-grid)"
+            stroke="var(--cb-canvas-grid)"
             strokeWidth={gx % 5 === 0 ? 0.9 : 0.45}
           />
         ))}
@@ -60,7 +60,7 @@ export function StageTerrainPreviewSvg({
             y1={toY(gy)}
             x2={toX(width)}
             y2={toY(gy)}
-            stroke="var(--lb-canvas-grid)"
+            stroke="var(--cb-canvas-grid)"
             strokeWidth={gy % 5 === 0 ? 0.9 : 0.45}
           />
         ))}
@@ -73,14 +73,14 @@ export function StageTerrainPreviewSvg({
               y={toY(tile.y)}
               width={10.4}
               height={vbH - toY(tile.y)}
-              fill="var(--lb-subtle)"
+              fill="var(--cb-subtle)"
             />
             <line
               x1={toX(tile.x) - 5}
               y1={toY(tile.y)}
               x2={toX(tile.x) + 5.2}
               y2={toY(tile.y)}
-              stroke="var(--lb-ink)"
+              stroke="var(--cb-ink)"
               strokeWidth={1.6}
             />
           </g>
@@ -89,17 +89,17 @@ export function StageTerrainPreviewSvg({
         {/* 출발 미니 트럭 & 도착 깃발 */}
         {leftAnchor && (
           <g transform={`translate(${toX(Math.max(1.5, leftAnchor.x - 2.6))}, ${toY(leftAnchor.y) - 6.5})`}>
-            <rect x="0" y="0" width="14" height="6" rx="1.5" fill="var(--lb-primary)" />
-            <rect x="9" y="-3.5" width="5" height="4" rx="1" fill="var(--lb-primary)" />
-            <circle cx="3.5" cy="6.5" r="1.8" fill="var(--lb-ink)" />
-            <circle cx="10.5" cy="6.5" r="1.8" fill="var(--lb-ink)" />
+            <rect x="0" y="0" width="14" height="6" rx="1.5" fill="var(--cb-primary)" />
+            <rect x="9" y="-3.5" width="5" height="4" rx="1" fill="var(--cb-primary)" />
+            <circle cx="3.5" cy="6.5" r="1.8" fill="var(--cb-ink)" />
+            <circle cx="10.5" cy="6.5" r="1.8" fill="var(--cb-ink)" />
           </g>
         )}
 
         {rightAnchor && (
           <g transform={`translate(${toX(Math.min(width - 1.5, rightAnchor.x + 2.2))}, ${toY(rightAnchor.y) - 13})`}>
-            <line x1="0" y1="0" x2="0" y2="13" stroke="var(--lb-ink)" strokeWidth="1.4" />
-            <polygon points="0,0 10,3.5 0,7" fill="var(--lb-sage)" />
+            <line x1="0" y1="0" x2="0" y2="13" stroke="var(--cb-ink)" strokeWidth="1.4" />
+            <polygon points="0,0 10,3.5 0,7" fill="var(--cb-sage)" />
           </g>
         )}
 
@@ -110,8 +110,8 @@ export function StageTerrainPreviewSvg({
               cx={toX(anchor.x)}
               cy={toY(anchor.y)}
               r={3.8}
-              fill="var(--lb-amber)"
-              stroke="var(--lb-surface)"
+              fill="var(--cb-amber)"
+              stroke="var(--cb-surface)"
               strokeWidth={1.4}
             />
           </g>
@@ -192,7 +192,7 @@ export function MiniBridgeThumbSvg({
               y1={mapY(s.y)}
               x2={mapX(e.x)}
               y2={mapY(e.y)}
-              stroke="var(--lb-ink)"
+              stroke="var(--cb-ink)"
               strokeWidth={2.4}
               strokeLinecap="round"
             />
@@ -205,7 +205,7 @@ export function MiniBridgeThumbSvg({
             cy={mapY(n.y)}
             r={n.nodeType === 'anchor' ? 3 : 2.1}
             fill={
-              n.nodeType === 'anchor' ? 'var(--lb-amber)' : 'var(--lb-primary)'
+              n.nodeType === 'anchor' ? 'var(--cb-amber)' : 'var(--cb-primary)'
             }
           />
         ))}

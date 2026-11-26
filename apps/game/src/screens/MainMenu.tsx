@@ -1,9 +1,10 @@
 import { useState, useEffect, useMemo } from 'react';
-import type { BridgeDesign } from '@linebound/domain';
-import { LESSONS } from '@linebound/content';
-import type { UserSession } from '@linebound/infrastructure';
-import { LevelProgressUseCase } from '@linebound/application';
-import { IndexedDbLevelProgressRepository } from '@linebound/infrastructure';
+import type { BridgeDesign } from '@cozybridge/domain';
+import { LESSONS } from '@cozybridge/content';
+import type { UserSession } from '@cozybridge/infrastructure';
+import { LevelProgressUseCase } from '@cozybridge/application';
+import { IndexedDbLevelProgressRepository } from '@cozybridge/infrastructure';
+import { APP_NAME, APP_VERSION } from '../app/app-meta';
 import { AuthModal } from '../components/AuthModal';
 import {
   BridgeHubModal,
@@ -20,7 +21,6 @@ import {
 import {
   ArrowRightIcon,
   BeamToolIcon,
-  BridgeLogoIcon,
   CopyWorkspaceIcon,
   EditPenIcon,
   FolderIcon,
@@ -185,11 +185,18 @@ export function MainMenu({
       {/* ─── 상단 바 (좌측 작업실 마크 · 우측 테마 스위처 & 계정 캡슐) ─── */}
       <header className="flex items-center justify-between gap-4 px-6 py-4 shrink-0">
         <div className="flex items-center gap-2.5 text-craft-ink">
-          <div className="flex h-9 w-9 items-center justify-center rounded-[11px] bg-craft-surface border-[1.5px] border-craft-border text-craft-primary">
-            <BridgeLogoIcon size={20} />
+          <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-[11px] bg-craft-surface border-[1.5px] border-craft-border">
+            <img
+              src="./icon-192.png"
+              alt="Cozybridge 아이콘"
+              className="h-full w-full object-cover"
+            />
           </div>
           <span className="text-sm font-extrabold tracking-tight">
-            라인바운드 작업실
+            Cozybridge 작업실
+          </span>
+          <span className="rounded-full bg-craft-subtle border border-craft-border px-2 py-0.5 text-[11px] font-bold text-craft-muted">
+            v{APP_VERSION}
           </span>
         </div>
 
@@ -246,11 +253,15 @@ export function MainMenu({
         <div className="flex w-full max-w-xl flex-col items-center gap-6">
           {/* 브랜드 타이틀 */}
           <div className="flex flex-col items-center text-center">
-            <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-[20px] bg-craft-primary text-white shadow-[0_4px_0_var(--lb-primary-shadow)]">
-              <BridgeLogoIcon size={34} />
+            <div className="mb-3 flex h-20 w-20 items-center justify-center overflow-hidden rounded-[22px] border-2 border-craft-border-strong shadow-[0_4px_0_var(--cb-border-strong)]">
+              <img
+                src="./icon-192.png"
+                alt="Cozybridge 앱 아이콘"
+                className="h-full w-full object-cover"
+              />
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight text-craft-ink">
-              LINEBOUND
+              {APP_NAME}
             </h1>
             <p className="mt-2 text-sm font-semibold text-craft-muted">
               점을 잇고 튼튼한 다리를 만들어 트럭을 건너게 해보세요!
@@ -261,7 +272,7 @@ export function MainMenu({
           <button
             type="button"
             onClick={() => onNavigate('build', recommendedLevel.id)}
-            className="group w-full rounded-[20px] bg-craft-primary hover:bg-craft-primary-hover p-5 sm:p-6 text-left text-white shadow-[0_4px_0_var(--lb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer overflow-hidden"
+            className="group w-full rounded-[20px] bg-craft-primary hover:bg-craft-primary-hover p-5 sm:p-6 text-left text-white shadow-[0_4px_0_var(--cb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer overflow-hidden"
           >
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4 min-w-0">

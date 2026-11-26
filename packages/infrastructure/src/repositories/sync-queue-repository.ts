@@ -4,8 +4,8 @@ import type {
   SyncOperation,
   SyncOperationStatus,
   SyncOperationType,
-} from '@linebound/domain';
-import { LineboundDatabase } from '../db/linebound-db.js';
+} from '@cozybridge/domain';
+import { CozybridgeDatabase } from '../db/cozybridge-db.js';
 
 export interface ISyncQueueRepository {
   enqueue(
@@ -26,7 +26,7 @@ export interface ISyncQueueRepository {
 }
 
 export class IndexedDbSyncQueueRepository implements ISyncQueueRepository {
-  constructor(private db: LineboundDatabase) {}
+  constructor(private db: CozybridgeDatabase) {}
 
   async enqueue(
     entityType: SyncEntityType,

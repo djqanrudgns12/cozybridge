@@ -1,4 +1,4 @@
-import type { SimulationFrame } from '@linebound/domain';
+import type { SimulationFrame } from '@cozybridge/domain';
 
 /**
  * 슬로모션 리플레이용 프레임 버퍼 (PRD 5.7)

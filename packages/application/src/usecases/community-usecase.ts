@@ -4,8 +4,8 @@ import type {
   EntityId,
   PublicDesignItem,
   ReactionType,
-} from '@linebound/domain';
-import type { ICommunityRepository } from '@linebound/infrastructure';
+} from '@cozybridge/domain';
+import type { ICommunityRepository } from '@cozybridge/infrastructure';
 
 /**
  * 공개 작품 탐색, 게시, 복제 및 반응 유스케이스 (PRD 6.14, 6.15)

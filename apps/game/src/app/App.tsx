@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import type { BridgeDesign } from '@linebound/domain';
-import type { UserSession } from '@linebound/infrastructure';
+import type { BridgeDesign } from '@cozybridge/domain';
+import type { UserSession } from '@cozybridge/infrastructure';
 import { MainMenu } from '../screens/MainMenu';
 import { StageSelectScreen } from '../screens/StageSelectScreen';
 import { LessonSelectScreen } from '../screens/LessonSelectScreen';

@@ -33,11 +33,11 @@ describe('22단계 스테이지 확장 및 챕터 탭 UI 검증', () => {
 
     // 4장 탭 클릭 시 18~22단계가 표시되고 18단계 미리보기로 전환됨
     fireEvent.click(screen.getByText('4장 · 마스터 협곡 (18~22)'));
-    expect(await screen.findByText('라인바운드 대교')).toBeDefined();
+    expect(await screen.findByText('코지브릿지 대교')).toBeDefined();
     expect(screen.getAllByText('알뜰살뜰 예산 시험').length).toBeGreaterThanOrEqual(1);
 
     // 22단계 클릭 시 우측 상세 카드가 22단계 정보로 전환됨
-    fireEvent.click(screen.getByText('라인바운드 대교'));
+    fireEvent.click(screen.getByText('코지브릿지 대교'));
     expect(screen.getByText('22단계')).toBeDefined();
     expect(screen.getByText('앞 단계를 먼저 통과하면 열려요!')).toBeDefined();
   });

@@ -1,5 +1,5 @@
 export {
-  LineboundDatabase,
+  CozybridgeDatabase,
   resolveUserStorageScope,
   getScopedDatabaseName,
   getScopedDatabase,
@@ -7,13 +7,13 @@ export {
   fromDesignRecord,
   toPublicDesignRecord,
   fromPublicDesignRecord,
-} from './db/linebound-db.js';
+} from './db/cozybridge-db.js';
 export type {
   BridgeDesignRecord,
   BridgeVersionRecord,
   LevelProgressRecord,
   PublicDesignRecord,
-} from './db/linebound-db.js';
+} from './db/cozybridge-db.js';
 
 export {
   IndexedDbDesignRepository,

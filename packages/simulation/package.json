@@ -1,6 +1,6 @@
 {
-  "name": "@linebound/simulation",
-  "version": "0.1.0",
+  "name": "@cozybridge/simulation",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "main": "./src/index.ts",
@@ -11,8 +11,8 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@linebound/domain": "workspace:*",
-    "@linebound/content": "workspace:*",
+    "@cozybridge/domain": "workspace:*",
+    "@cozybridge/content": "workspace:*",
     "matter-js": "^0.20.0"
   },
   "devDependencies": {

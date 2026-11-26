@@ -1,4 +1,4 @@
-import { resolveUserStorageScope } from '../db/linebound-db.js';
+import { resolveUserStorageScope } from '../db/cozybridge-db.js';
 
 export interface ICurrencyRepository {
   getBalance(): Promise<number>;
@@ -17,8 +17,8 @@ export class LocalCurrencyRepository implements ICurrencyRepository {
     const scope = userId ? resolveUserStorageScope(userId) : 'guest';
     this.storageKey =
       scope === 'guest'
-        ? 'linebound_coin_balance'
-        : `linebound_coin_balance:${scope}`;
+        ? 'cozybridge_coin_balance'
+        : `cozybridge_coin_balance:${scope}`;
 
     if (typeof window !== 'undefined' && window.localStorage) {
       const saved = localStorage.getItem(this.storageKey);

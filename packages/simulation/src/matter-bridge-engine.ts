@@ -7,7 +7,7 @@ import type {
   LevelDefinition,
   SimulationFrame,
   SimulationStatus,
-} from '@linebound/domain';
+} from '@cozybridge/domain';
 import type { BridgeSimulationEngine } from './engine-interface.js';
 import { FailureDetector } from './failure-detector.js';
 import { ReplayBuffer } from './replay-buffer.js';

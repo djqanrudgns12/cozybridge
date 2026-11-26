@@ -1,12 +1,12 @@
 import Phaser from 'phaser';
-import type { LessonGuideSegment, LevelDefinition } from '@linebound/content';
+import type { LessonGuideSegment, LevelDefinition } from '@cozybridge/content';
 import {
   DEFAULT_MAX_MEMBER_LENGTH,
   type SimulationFrame,
   type EntityId,
   type GridPoint,
-} from '@linebound/domain';
-import { computeInitialTruckSpawn } from '@linebound/simulation';
+} from '@cozybridge/domain';
+import { computeInitialTruckSpawn } from '@cozybridge/simulation';
 import {
   CANVAS_PALETTES,
   type CanvasPalette,

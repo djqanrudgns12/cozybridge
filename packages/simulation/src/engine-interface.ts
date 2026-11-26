@@ -4,7 +4,7 @@ import type {
   SimulationStatus,
   SimulationFrame,
   FailureReport,
-} from '@linebound/domain';
+} from '@cozybridge/domain';
 
 /**
  * 다리 물리 시뮬레이션 엔진 인터페이스 (PRD 5.2)

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { LEVELS, getHintsByLevelId, isLevelUnlocked } from '@linebound/content';
-import type { BridgeDesign, BridgeNode, LevelDefinition } from '@linebound/domain';
+import { LEVELS, getHintsByLevelId, isLevelUnlocked } from '@cozybridge/content';
+import type { BridgeDesign, BridgeNode, LevelDefinition } from '@cozybridge/domain';
 import { MatterBridgeEngine } from '../matter-bridge-engine.js';
 
 type Segment = [{ x: number; y: number }, { x: number; y: number }];

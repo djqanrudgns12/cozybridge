@@ -1,4 +1,4 @@
-import type { BridgeDesign, EntityId } from '@linebound/domain';
+import type { BridgeDesign, EntityId } from '@cozybridge/domain';
 import type { ISyncQueueRepository } from '../repositories/sync-queue-repository.js';
 import type { IDesignRepository } from '../repositories/design-repository.js';
 import type { IAuthService } from '../auth/auth-service.js';

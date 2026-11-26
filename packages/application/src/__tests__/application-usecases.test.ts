@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import 'fake-indexeddb/auto';
-import type { BridgeDesign } from '@linebound/domain';
+import type { BridgeDesign } from '@cozybridge/domain';
 import {
-  LineboundDatabase,
+  CozybridgeDatabase,
   getScopedDatabase,
   IndexedDbDesignRepository,
   IndexedDbLevelProgressRepository,
@@ -11,7 +11,7 @@ import {
   LocalCurrencyRepository,
   SupabaseAuthService,
   SyncManager,
-} from '@linebound/infrastructure';
+} from '@cozybridge/infrastructure';
 import {
   SaveBridgeDesignUseCase,
   LoadBridgeDesignUseCase,
@@ -25,7 +25,7 @@ import {
 } from '../index.js';
 
 describe('Application 유스케이스 종합 테스트 (Phase 2 & 3)', () => {
-  let db: LineboundDatabase;
+  let db: CozybridgeDatabase;
   let designRepo: IndexedDbDesignRepository;
   let progressRepo: IndexedDbLevelProgressRepository;
   let syncQueue: IndexedDbSyncQueueRepository;
@@ -45,7 +45,7 @@ describe('Application 유스케이스 종합 테스트 (Phase 2 & 3)', () => {
   let hintUseCase: HintUseCase;
 
   beforeEach(() => {
-    db = new LineboundDatabase(`app_test_${Date.now()}_${Math.random()}`);
+    db = new CozybridgeDatabase(`app_test_${Date.now()}_${Math.random()}`);
     designRepo = new IndexedDbDesignRepository(db);
     progressRepo = new IndexedDbLevelProgressRepository(db);
     syncQueue = new IndexedDbSyncQueueRepository(db);
@@ -235,7 +235,7 @@ describe('Application 유스케이스 종합 테스트 (Phase 2 & 3)', () => {
 
     // 1. 계정 A 가입 후 1단계 클리어 및 다리 저장
     const accountA = await strictAuth.signUp(
-      'player1@linebound.com',
+      'player1@cozybridge.com',
       'pass1234',
       '첫번째유저',
     );
@@ -268,12 +268,12 @@ describe('Application 유스케이스 종합 테스트 (Phase 2 & 3)', () => {
 
     // 2. 똑같은 이메일로 다시 회원가입 시도 -> 즉시 차단되어야 함
     await expect(
-      strictAuth.signUp('player1@linebound.com', 'newpass99', '덮어쓰기시도'),
+      strictAuth.signUp('player1@cozybridge.com', 'newpass99', '덮어쓰기시도'),
     ).rejects.toThrow(/이미 가입된 이메일/);
 
     // 3. 다른 이메일(계정 B)로 새로 가입 -> 진행 상황과 도면이 깨끗하게 초기화되어 분리됨
     const accountB = await strictAuth.signUp(
-      'player2@linebound.com',
+      'player2@cozybridge.com',
       'pass5678',
       '두번째유저',
     );

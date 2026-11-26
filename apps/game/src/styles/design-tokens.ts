@@ -1,4 +1,4 @@
-// Linebound 멀티 테마 디자인 토큰 & 4-2 미니멀 모눈 스케치북 캔버스 팔레트
+// Cozybridge 멀티 테마 디자인 토큰 & 4-2 미니멀 모눈 스케치북 캔버스 팔레트
 // 기본 테마: 'craft' (0-C 소프트 크래프트 디오라마)
 
 export type ThemeId = 'craft' | 'tactile' | 'architect' | 'night';

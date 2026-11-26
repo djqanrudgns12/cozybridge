@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import 'fake-indexeddb/auto';
-import type { BridgeDesign } from '@linebound/domain';
-import { LineboundDatabase, getScopedDatabase } from '../db/linebound-db.js';
+import type { BridgeDesign } from '@cozybridge/domain';
+import { CozybridgeDatabase, getScopedDatabase } from '../db/cozybridge-db.js';
 import { IndexedDbDesignRepository } from '../repositories/design-repository.js';
 import { IndexedDbLevelProgressRepository } from '../repositories/level-progress-repository.js';
 import { IndexedDbSyncQueueRepository } from '../repositories/sync-queue-repository.js';
@@ -9,14 +9,14 @@ import { SupabaseAuthService } from '../auth/auth-service.js';
 import { SyncManager } from '../sync/sync-manager.js';
 
 describe('동기화 큐 및 인증 서비스 테스트 (Phase 2)', () => {
-  let db: LineboundDatabase;
+  let db: CozybridgeDatabase;
   let syncQueue: IndexedDbSyncQueueRepository;
   let designRepo: IndexedDbDesignRepository;
   let authService: SupabaseAuthService;
   let syncManager: SyncManager;
 
   beforeEach(() => {
-    db = new LineboundDatabase(`sync_test_${Date.now()}_${Math.random()}`);
+    db = new CozybridgeDatabase(`sync_test_${Date.now()}_${Math.random()}`);
     syncQueue = new IndexedDbSyncQueueRepository(db);
     designRepo = new IndexedDbDesignRepository(db);
     authService = new SupabaseAuthService();
@@ -85,7 +85,7 @@ describe('동기화 큐 및 인증 서비스 테스트 (Phase 2)', () => {
     await syncQueue.enqueue('design', 'd-sync-1', 'create', '{}');
 
     // 3. 온라인 로그인
-    await authService.signIn('engineer@linebound.com', 'secret1234');
+    await authService.signIn('engineer@cozybridge.com', 'secret1234');
 
     // 4. 큐 프로세스 실행
     const result = await syncManager.processQueue();
@@ -121,18 +121,18 @@ describe('동기화 큐 및 인증 서비스 테스트 (Phase 2)', () => {
     const renamedGuest = await authService.updateDisplayName('다리대장');
     expect(renamedGuest.displayName).toBe('다리대장');
 
-    await authService.signUp('hero@linebound.com', 'secret1234', '원래별명');
+    await authService.signUp('hero@cozybridge.com', 'secret1234', '원래별명');
     const renamedAccount = await authService.updateDisplayName('바꾼별명');
     expect(renamedAccount.displayName).toBe('바꾼별명');
 
     await authService.signOut();
-    const relogin = await authService.signIn('hero@linebound.com', 'secret1234');
+    const relogin = await authService.signIn('hero@cozybridge.com', 'secret1234');
     expect(relogin.displayName).toBe('바꾼별명');
   });
 
   it('이미 가입된 이메일 주소(대소문자·공백 포함)로 다시 회원가입을 시도하면 차단되고 기존 계정이 보존된다', async () => {
     const first = await authService.signUp(
-      'same@linebound.com',
+      'same@cozybridge.com',
       'firstPass123',
       '원조건축가',
     );
@@ -140,17 +140,17 @@ describe('동기화 큐 및 인증 서비스 테스트 (Phase 2)', () => {
     await authService.signOut();
 
     await expect(
-      authService.signUp('  SAME@Linebound.com ', 'otherPass999', '새계정시도'),
+      authService.signUp('  SAME@Cozybridge.com ', 'otherPass999', '새계정시도'),
     ).rejects.toThrow(/이미 가입된 이메일/);
 
     // 틀린 비밀번호 로그인도 차단되어야 함
     await expect(
-      authService.signIn('same@linebound.com', 'otherPass999'),
+      authService.signIn('same@cozybridge.com', 'otherPass999'),
     ).rejects.toThrow(/비밀번호/);
 
     // 원래 비밀번호로 로그인하면 원래 userId와 별명이 그대로 유지됨
     const relogin = await authService.signIn(
-      'same@linebound.com',
+      'same@cozybridge.com',
       'firstPass123',
     );
     expect(relogin.userId).toBe(first.userId);
@@ -158,9 +158,9 @@ describe('동기화 큐 및 인증 서비스 테스트 (Phase 2)', () => {
   });
 
   it('계정별 스코프 DB(getScopedDatabase)는 서로 다른 계정의 진행 상황과 도면을 완전히 격리한다', async () => {
-    const userA = await authService.signUp('a@linebound.com', 'pass1234', '유저A');
+    const userA = await authService.signUp('a@cozybridge.com', 'pass1234', '유저A');
     await authService.signOut();
-    const userB = await authService.signUp('b@linebound.com', 'pass1234', '유저B');
+    const userB = await authService.signUp('b@cozybridge.com', 'pass1234', '유저B');
 
     expect(userA.userId).not.toBe(userB.userId);
 

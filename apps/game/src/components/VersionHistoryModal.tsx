@@ -1,5 +1,5 @@
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
-import type { BridgeVersion } from '@linebound/domain';
+import type { BridgeVersion } from '@cozybridge/domain';
 import { MiniBridgeThumbSvg } from './ui/BridgePreviewSvg';
 import { CloseIcon, HistoryIcon } from './ui/Icons';
 
@@ -31,7 +31,7 @@ export function VersionHistoryModal({
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
       <div
         className="fixed inset-0 backdrop-blur-[2px]"
-        style={{ backgroundColor: 'var(--lb-backdrop)' }}
+        style={{ backgroundColor: 'var(--cb-backdrop)' }}
       />
       <div className="fixed inset-0 flex items-center justify-center p-5">
         <DialogPanel className="w-full max-w-lg rounded-[20px] bg-craft-surface border-[1.5px] border-craft-border p-6 shadow-2xl text-craft-ink">

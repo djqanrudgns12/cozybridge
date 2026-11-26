@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { LESSONS } from '@linebound/content';
+import { LESSONS } from '@cozybridge/content';
 import { ThemeProvider } from '../styles/ThemeContext';
 import { LessonSelectScreen } from '../screens/LessonSelectScreen';
 import { LessonCoachBar } from '../components/LessonCoachBar';

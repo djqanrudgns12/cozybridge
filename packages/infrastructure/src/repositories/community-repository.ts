@@ -4,13 +4,13 @@ import type {
   EntityId,
   PublicDesignItem,
   ReactionType,
-} from '@linebound/domain';
+} from '@cozybridge/domain';
 import {
-  LineboundDatabase,
+  CozybridgeDatabase,
   fromPublicDesignRecord,
   toDesignRecord,
   toPublicDesignRecord,
-} from '../db/linebound-db.js';
+} from '../db/cozybridge-db.js';
 
 export interface ICommunityRepository {
   getPublicDesigns(levelId?: EntityId): Promise<PublicDesignItem[]>;
@@ -41,7 +41,7 @@ export class CommunityRepository implements ICommunityRepository {
   private userReactions: Map<string, Set<ReactionType>> = new Map();
   private hydrated = false;
 
-  constructor(private db: LineboundDatabase) {
+  constructor(private db: CozybridgeDatabase) {
     // Phase 3 기본 시드 공개 작품
     this.seedDefaultDesigns();
   }

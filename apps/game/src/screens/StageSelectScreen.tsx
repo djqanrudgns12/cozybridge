@@ -6,10 +6,10 @@ import {
   TabPanel,
   TabPanels,
 } from '@headlessui/react';
-import { LEVELS } from '@linebound/content';
-import type { LevelItemView } from '@linebound/application';
-import { LevelProgressUseCase } from '@linebound/application';
-import { IndexedDbLevelProgressRepository } from '@linebound/infrastructure';
+import { LEVELS } from '@cozybridge/content';
+import type { LevelItemView } from '@cozybridge/application';
+import { LevelProgressUseCase } from '@cozybridge/application';
+import { IndexedDbLevelProgressRepository } from '@cozybridge/infrastructure';
 import { StageTerrainPreviewSvg } from '../components/ui/BridgePreviewSvg';
 import { ThemeSwitcher } from '../components/ui/ThemeSwitcher';
 import {
@@ -402,7 +402,7 @@ export function StageSelectScreen({
                                 onClick={() =>
                                   onSelectLevel(selectedItem.level.id)
                                 }
-                                className="w-full flex items-center justify-center gap-2 rounded-[16px] bg-craft-primary hover:bg-craft-primary-hover px-6 py-4 text-base font-extrabold text-white shadow-[0_4px_0_var(--lb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer"
+                                className="w-full flex items-center justify-center gap-2 rounded-[16px] bg-craft-primary hover:bg-craft-primary-hover px-6 py-4 text-base font-extrabold text-white shadow-[0_4px_0_var(--cb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer"
                               >
                                 <span>이 단계 다리 짓기</span>
                                 <ArrowRightIcon size={18} />

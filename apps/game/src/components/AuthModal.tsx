@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
-import type { UserSession } from '@linebound/infrastructure';
+import type { UserSession } from '@cozybridge/infrastructure';
 import { appAuthUseCase } from '../utils/auth-client';
 import {
   AlertTriangleIcon,
@@ -214,7 +214,7 @@ export function AuthModal({
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
       <div
         className="fixed inset-0 backdrop-blur-[2px] transition-opacity"
-        style={{ backgroundColor: 'var(--lb-backdrop)' }}
+        style={{ backgroundColor: 'var(--cb-backdrop)' }}
       />
 
       <div className="fixed inset-0 flex items-center justify-center p-5">
@@ -296,7 +296,7 @@ export function AuthModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex items-center justify-center gap-2 w-full rounded-[14px] bg-craft-primary hover:bg-craft-primary-hover px-5 py-3.5 text-sm font-extrabold text-white shadow-[0_3px_0_var(--lb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer disabled:opacity-60"
+                  className="flex items-center justify-center gap-2 w-full rounded-[14px] bg-craft-primary hover:bg-craft-primary-hover px-5 py-3.5 text-sm font-extrabold text-white shadow-[0_3px_0_var(--cb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer disabled:opacity-60"
                 >
                   <EditPenIcon size={16} />
                   <span>{loading ? '저장하는 중...' : '이 별명으로 저장하기'}</span>
@@ -538,7 +538,7 @@ export function AuthModal({
                 <button
                   type="submit"
                   disabled={loading || isDuplicateSignupEmail}
-                  className="mt-1 w-full rounded-[14px] bg-craft-primary hover:bg-craft-primary-hover px-5 py-3.5 text-sm font-extrabold text-white shadow-[0_3px_0_var(--lb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="mt-1 w-full rounded-[14px] bg-craft-primary hover:bg-craft-primary-hover px-5 py-3.5 text-sm font-extrabold text-white shadow-[0_3px_0_var(--cb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {loading
                     ? '잠시만 기다려 주세요...'

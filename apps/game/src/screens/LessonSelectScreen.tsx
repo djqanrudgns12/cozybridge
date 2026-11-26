@@ -6,7 +6,7 @@ import {
   TabPanel,
   TabPanels,
 } from '@headlessui/react';
-import { LESSONS, type LessonDefinition } from '@linebound/content';
+import { LESSONS, type LessonDefinition } from '@cozybridge/content';
 import { getCompletedLessonIds } from '../utils/lesson-progress';
 import { resolveEffectiveStorageScope } from '../utils/user-storage';
 import { StageTerrainPreviewSvg } from '../components/ui/BridgePreviewSvg';
@@ -239,7 +239,7 @@ export function LessonSelectScreen({
                         <button
                           type="button"
                           onClick={() => onSelectLesson(selectedLesson.id)}
-                          className="w-full flex items-center justify-center gap-2 rounded-[16px] bg-craft-primary hover:bg-craft-primary-hover px-6 py-4 text-base font-extrabold text-white shadow-[0_4px_0_var(--lb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer"
+                          className="w-full flex items-center justify-center gap-2 rounded-[16px] bg-craft-primary hover:bg-craft-primary-hover px-6 py-4 text-base font-extrabold text-white shadow-[0_4px_0_var(--cb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer"
                         >
                           <span>
                             {completedIds.has(selectedLesson.id)

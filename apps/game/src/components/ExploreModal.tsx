@@ -1,4 +1,4 @@
-import type { BridgeDesign } from '@linebound/domain';
+import type { BridgeDesign } from '@cozybridge/domain';
 import { BridgeHubModal } from './BridgeHubModal';
 
 interface ExploreModalProps {

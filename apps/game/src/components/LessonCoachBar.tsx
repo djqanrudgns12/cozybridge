@@ -1,5 +1,5 @@
 import { Switch } from '@headlessui/react';
-import type { LessonDefinition } from '@linebound/content';
+import type { LessonDefinition } from '@cozybridge/content';
 import {
   CheckCircleIcon,
   MagicWandIcon,

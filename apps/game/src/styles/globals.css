@@ -1,105 +1,105 @@
 @import "tailwindcss";
 
-/* ─── Linebound 통합 디자인 토큰 & 멀티 테마 시스템 ─── */
+/* ─── Cozybridge 통합 디자인 토큰 & 멀티 테마 시스템 ─── */
 /* 기본 테마: 0-C 소프트 크래프트 디오라마 (data-theme="craft") */
 :root,
 [data-theme="craft"] {
-  --lb-bg: #F5F0E6;
-  --lb-surface: #FFFDF9;
-  --lb-subtle: #EAE2D3;
-  --lb-border: #DDD3C0;
-  --lb-border-strong: #C5B89F;
-  --lb-ink: #292524;
-  --lb-muted: #686058;
-  --lb-primary: #DE5438;
-  --lb-primary-hover: #C84328;
-  --lb-primary-shadow: #AE351D;
-  --lb-sage: #2E9E6B;
-  --lb-sage-soft: #E5F4EC;
-  --lb-accent: #2563EB;
-  --lb-accent-soft: #E8F1FC;
-  --lb-amber: #D97706;
-  --lb-amber-soft: #FEF3C7;
-  --lb-danger: #D9383A;
-  --lb-danger-soft: #FDECEC;
-  --lb-canvas-paper: #FAF7F0;
-  --lb-canvas-grid: #E4DCCB;
-  --lb-backdrop: rgba(41, 37, 36, 0.45);
+  --cb-bg: #F5F0E6;
+  --cb-surface: #FFFDF9;
+  --cb-subtle: #EAE2D3;
+  --cb-border: #DDD3C0;
+  --cb-border-strong: #C5B89F;
+  --cb-ink: #292524;
+  --cb-muted: #686058;
+  --cb-primary: #DE5438;
+  --cb-primary-hover: #C84328;
+  --cb-primary-shadow: #AE351D;
+  --cb-sage: #2E9E6B;
+  --cb-sage-soft: #E5F4EC;
+  --cb-accent: #2563EB;
+  --cb-accent-soft: #E8F1FC;
+  --cb-amber: #D97706;
+  --cb-amber-soft: #FEF3C7;
+  --cb-danger: #D9383A;
+  --cb-danger-soft: #FDECEC;
+  --cb-canvas-paper: #FAF7F0;
+  --cb-canvas-grid: #E4DCCB;
+  --cb-backdrop: rgba(41, 37, 36, 0.45);
 }
 
 /* 테마 2: 0-A 택타일 블록 스튜디오 */
 [data-theme="tactile"] {
-  --lb-bg: #F7F6F2;
-  --lb-surface: #FFFFFF;
-  --lb-subtle: #EFECE6;
-  --lb-border: #D5DCE6;
-  --lb-border-strong: #B6C2D2;
-  --lb-ink: #182230;
-  --lb-muted: #526071;
-  --lb-primary: #F06529;
-  --lb-primary-hover: #D9531A;
-  --lb-primary-shadow: #C24613;
-  --lb-sage: #16A34A;
-  --lb-sage-soft: #DCFCE7;
-  --lb-accent: #2589F5;
-  --lb-accent-soft: #E0F2FE;
-  --lb-amber: #D97706;
-  --lb-amber-soft: #FEF3C7;
-  --lb-danger: #E11D48;
-  --lb-danger-soft: #FFE4E6;
-  --lb-canvas-paper: #FCFCFA;
-  --lb-canvas-grid: #E2E8F0;
-  --lb-backdrop: rgba(24, 34, 48, 0.48);
+  --cb-bg: #F7F6F2;
+  --cb-surface: #FFFFFF;
+  --cb-subtle: #EFECE6;
+  --cb-border: #D5DCE6;
+  --cb-border-strong: #B6C2D2;
+  --cb-ink: #182230;
+  --cb-muted: #526071;
+  --cb-primary: #F06529;
+  --cb-primary-hover: #D9531A;
+  --cb-primary-shadow: #C24613;
+  --cb-sage: #16A34A;
+  --cb-sage-soft: #DCFCE7;
+  --cb-accent: #2589F5;
+  --cb-accent-soft: #E0F2FE;
+  --cb-amber: #D97706;
+  --cb-amber-soft: #FEF3C7;
+  --cb-danger: #E11D48;
+  --cb-danger-soft: #FFE4E6;
+  --cb-canvas-paper: #FCFCFA;
+  --cb-canvas-grid: #E2E8F0;
+  --cb-backdrop: rgba(24, 34, 48, 0.48);
 }
 
 /* 테마 3: 0-B 클린 아키텍트 데스크 */
 [data-theme="architect"] {
-  --lb-bg: #F1F5F9;
-  --lb-surface: #FFFFFF;
-  --lb-subtle: #E2E8F0;
-  --lb-border: #CBD5E1;
-  --lb-border-strong: #94A3B8;
-  --lb-ink: #0F172A;
-  --lb-muted: #475569;
-  --lb-primary: #2563EB;
-  --lb-primary-hover: #1D4ED8;
-  --lb-primary-shadow: #1E40AF;
-  --lb-sage: #059669;
-  --lb-sage-soft: #D1FAE5;
-  --lb-accent: #0284C7;
-  --lb-accent-soft: #E0F2FE;
-  --lb-amber: #D97706;
-  --lb-amber-soft: #FEF3C7;
-  --lb-danger: #DC2626;
-  --lb-danger-soft: #FEE2E2;
-  --lb-canvas-paper: #F8FAFC;
-  --lb-canvas-grid: #E2E8F0;
-  --lb-backdrop: rgba(15, 23, 42, 0.5);
+  --cb-bg: #F1F5F9;
+  --cb-surface: #FFFFFF;
+  --cb-subtle: #E2E8F0;
+  --cb-border: #CBD5E1;
+  --cb-border-strong: #94A3B8;
+  --cb-ink: #0F172A;
+  --cb-muted: #475569;
+  --cb-primary: #2563EB;
+  --cb-primary-hover: #1D4ED8;
+  --cb-primary-shadow: #1E40AF;
+  --cb-sage: #059669;
+  --cb-sage-soft: #D1FAE5;
+  --cb-accent: #0284C7;
+  --cb-accent-soft: #E0F2FE;
+  --cb-amber: #D97706;
+  --cb-amber-soft: #FEF3C7;
+  --cb-danger: #DC2626;
+  --cb-danger-soft: #FEE2E2;
+  --cb-canvas-paper: #F8FAFC;
+  --cb-canvas-grid: #E2E8F0;
+  --cb-backdrop: rgba(15, 23, 42, 0.5);
 }
 
 /* 테마 4: 나이트 도면 (어두운 환경용 다크 모눈 테마) */
 [data-theme="night"] {
-  --lb-bg: #0F172A;
-  --lb-surface: #1E293B;
-  --lb-subtle: #283548;
-  --lb-border: #334155;
-  --lb-border-strong: #475569;
-  --lb-ink: #F1F5F9;
-  --lb-muted: #94A3B8;
-  --lb-primary: #F97316;
-  --lb-primary-hover: #EA580C;
-  --lb-primary-shadow: #C2410C;
-  --lb-sage: #34D399;
-  --lb-sage-soft: rgba(52, 211, 153, 0.16);
-  --lb-accent: #38BDF8;
-  --lb-accent-soft: rgba(56, 189, 248, 0.16);
-  --lb-amber: #FBBF24;
-  --lb-amber-soft: rgba(251, 191, 36, 0.16);
-  --lb-danger: #FB7185;
-  --lb-danger-soft: rgba(251, 113, 133, 0.16);
-  --lb-canvas-paper: #131C31;
-  --lb-canvas-grid: #23324D;
-  --lb-backdrop: rgba(2, 6, 23, 0.72);
+  --cb-bg: #0F172A;
+  --cb-surface: #1E293B;
+  --cb-subtle: #283548;
+  --cb-border: #334155;
+  --cb-border-strong: #475569;
+  --cb-ink: #F1F5F9;
+  --cb-muted: #94A3B8;
+  --cb-primary: #F97316;
+  --cb-primary-hover: #EA580C;
+  --cb-primary-shadow: #C2410C;
+  --cb-sage: #34D399;
+  --cb-sage-soft: rgba(52, 211, 153, 0.16);
+  --cb-accent: #38BDF8;
+  --cb-accent-soft: rgba(56, 189, 248, 0.16);
+  --cb-amber: #FBBF24;
+  --cb-amber-soft: rgba(251, 191, 36, 0.16);
+  --cb-danger: #FB7185;
+  --cb-danger-soft: rgba(251, 113, 133, 0.16);
+  --cb-canvas-paper: #131C31;
+  --cb-canvas-grid: #23324D;
+  --cb-backdrop: rgba(2, 6, 23, 0.72);
 }
 
 @theme inline {
@@ -107,36 +107,36 @@
     BlinkMacSystemFont, system-ui, "Segoe UI", "Apple SD Gothic Neo",
     "Noto Sans KR", "Malgun Gothic", sans-serif;
 
-  --color-craft-bg: var(--lb-bg);
-  --color-craft-surface: var(--lb-surface);
-  --color-craft-subtle: var(--lb-subtle);
-  --color-craft-border: var(--lb-border);
-  --color-craft-border-strong: var(--lb-border-strong);
-  --color-craft-ink: var(--lb-ink);
-  --color-craft-muted: var(--lb-muted);
-  --color-craft-primary: var(--lb-primary);
-  --color-craft-primary-hover: var(--lb-primary-hover);
-  --color-craft-primary-shadow: var(--lb-primary-shadow);
-  --color-craft-sage: var(--lb-sage);
-  --color-craft-sage-soft: var(--lb-sage-soft);
-  --color-craft-accent: var(--lb-accent);
-  --color-craft-accent-soft: var(--lb-accent-soft);
-  --color-craft-amber: var(--lb-amber);
-  --color-craft-amber-soft: var(--lb-amber-soft);
-  --color-craft-danger: var(--lb-danger);
-  --color-craft-danger-soft: var(--lb-danger-soft);
-  --color-craft-paper: var(--lb-canvas-paper);
-  --color-craft-grid: var(--lb-canvas-grid);
+  --color-craft-bg: var(--cb-bg);
+  --color-craft-surface: var(--cb-surface);
+  --color-craft-subtle: var(--cb-subtle);
+  --color-craft-border: var(--cb-border);
+  --color-craft-border-strong: var(--cb-border-strong);
+  --color-craft-ink: var(--cb-ink);
+  --color-craft-muted: var(--cb-muted);
+  --color-craft-primary: var(--cb-primary);
+  --color-craft-primary-hover: var(--cb-primary-hover);
+  --color-craft-primary-shadow: var(--cb-primary-shadow);
+  --color-craft-sage: var(--cb-sage);
+  --color-craft-sage-soft: var(--cb-sage-soft);
+  --color-craft-accent: var(--cb-accent);
+  --color-craft-accent-soft: var(--cb-accent-soft);
+  --color-craft-amber: var(--cb-amber);
+  --color-craft-amber-soft: var(--cb-amber-soft);
+  --color-craft-danger: var(--cb-danger);
+  --color-craft-danger-soft: var(--cb-danger-soft);
+  --color-craft-paper: var(--cb-canvas-paper);
+  --color-craft-grid: var(--cb-canvas-grid);
 
   /* 호환 시맨틱 토큰 */
-  --color-bg: var(--lb-bg);
-  --color-surface: var(--lb-surface);
-  --color-primary-text: var(--lb-ink);
-  --color-primary-action: var(--lb-primary);
-  --color-accent: var(--lb-accent);
-  --color-danger: var(--lb-danger);
-  --color-warning: var(--lb-amber);
-  --color-success: var(--lb-sage);
+  --color-bg: var(--cb-bg);
+  --color-surface: var(--cb-surface);
+  --color-primary-text: var(--cb-ink);
+  --color-primary-action: var(--cb-primary);
+  --color-accent: var(--cb-accent);
+  --color-danger: var(--cb-danger);
+  --color-warning: var(--cb-amber);
+  --color-success: var(--cb-sage);
 }
 
 @layer base {
@@ -150,8 +150,8 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: var(--lb-bg);
-    color: var(--lb-ink);
+    background-color: var(--cb-bg);
+    color: var(--cb-ink);
     word-break: keep-all;
     overflow-wrap: break-word;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -166,12 +166,12 @@
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--lb-bg);
+  background: var(--cb-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--lb-border-strong);
+  background: var(--cb-border-strong);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--lb-muted);
+  background: var(--cb-muted);
 }

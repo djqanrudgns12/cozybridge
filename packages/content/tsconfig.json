@@ -6,7 +6,7 @@
     "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
-      "@linebound/domain": ["../domain/src"]
+      "@cozybridge/domain": ["../domain/src"]
     }
   },
   "include": ["src/**/*"],

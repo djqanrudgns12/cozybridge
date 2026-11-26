@@ -1,6 +1,6 @@
 {
-  "name": "@linebound/game",
-  "version": "0.1.0",
+  "name": "@cozybridge/game",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
-    "@linebound/application": "workspace:*",
-    "@linebound/content": "workspace:*",
-    "@linebound/domain": "workspace:*",
-    "@linebound/infrastructure": "workspace:*",
-    "@linebound/simulation": "workspace:*",
+    "@cozybridge/application": "workspace:*",
+    "@cozybridge/content": "workspace:*",
+    "@cozybridge/domain": "workspace:*",
+    "@cozybridge/infrastructure": "workspace:*",
+    "@cozybridge/simulation": "workspace:*",
     "matter-js": "^0.20.0",
     "phaser": "^4.2.1",
     "react": "^19.1.0",

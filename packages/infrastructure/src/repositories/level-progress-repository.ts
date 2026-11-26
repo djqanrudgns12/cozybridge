@@ -1,5 +1,5 @@
-import type { EntityId, Timestamp } from '@linebound/domain';
-import { LineboundDatabase, type LevelProgressRecord } from '../db/linebound-db.js';
+import type { EntityId, Timestamp } from '@cozybridge/domain';
+import { CozybridgeDatabase, type LevelProgressRecord } from '../db/cozybridge-db.js';
 
 export interface ILevelProgressRepository {
   getProgress(levelId: EntityId): Promise<LevelProgressRecord | null>;
@@ -12,7 +12,7 @@ export interface ILevelProgressRepository {
 }
 
 export class IndexedDbLevelProgressRepository implements ILevelProgressRepository {
-  constructor(private db: LineboundDatabase) {}
+  constructor(private db: CozybridgeDatabase) {}
 
   async getProgress(levelId: EntityId): Promise<LevelProgressRecord | null> {
     const record = await this.db.levelProgress.get(levelId);

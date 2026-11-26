@@ -1,6 +1,6 @@
 {
-  "name": "@linebound/application",
-  "version": "0.1.0",
+  "name": "@cozybridge/application",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "main": "./src/index.ts",
@@ -11,12 +11,12 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@linebound/domain": "workspace:*",
-    "@linebound/infrastructure": "workspace:*",
-    "@linebound/content": "workspace:*"
+    "@cozybridge/domain": "workspace:*",
+    "@cozybridge/infrastructure": "workspace:*",
+    "@cozybridge/content": "workspace:*"
   },
   "devDependencies": {
-    "@linebound/simulation": "workspace:*",
+    "@cozybridge/simulation": "workspace:*",
     "fake-indexeddb": "^6.0.0",
     "typescript": "^5.8.3",
     "vitest": "^3.2.1"

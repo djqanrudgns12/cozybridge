@@ -7,7 +7,7 @@ import type {
   ReactionType,
   SyncOperation,
   Timestamp,
-} from '@linebound/domain';
+} from '@cozybridge/domain';
 
 /**
  * 단계별 플레이 기록 엔티티 (PRD 6.6, 6.9)
@@ -78,16 +78,16 @@ export interface PublicDesignRecord {
 }
 
 /**
- * Linebound 로컬 IndexedDB 데이터베이스 (PRD 8.1, 9.1)
+ * Cozybridge 로컬 IndexedDB 데이터베이스 (PRD 8.1, 9.1)
  */
-export class LineboundDatabase extends Dexie {
+export class CozybridgeDatabase extends Dexie {
   designs!: EntityTable<BridgeDesignRecord, 'id'>;
   versions!: EntityTable<BridgeVersionRecord, 'id'>;
   levelProgress!: EntityTable<LevelProgressRecord, 'levelId'>;
   syncQueue!: EntityTable<SyncOperation, 'id'>;
   publicDesigns!: EntityTable<PublicDesignRecord, 'id'>;
 
-  constructor(dbName: string = 'linebound_local_db') {
+  constructor(dbName: string = 'cozybridge_local_db') {
     super(dbName);
 
     this.version(1).stores({
@@ -138,20 +138,20 @@ export function resolveUserStorageScope(userId?: string | null): string {
 export function getScopedDatabaseName(userId?: string | null): string {
   const scope = resolveUserStorageScope(userId);
   return scope === 'guest'
-    ? 'linebound_local_db_guest'
-    : `linebound_local_db_${scope}`;
+    ? 'cozybridge_local_db_guest'
+    : `cozybridge_local_db_${scope}`;
 }
 
-const scopedDbCache = new Map<string, LineboundDatabase>();
+const scopedDbCache = new Map<string, CozybridgeDatabase>();
 
 /**
- * 계정(userId)별로 완전히 격리된 LineboundDatabase 인스턴스를 반환합니다.
+ * 계정(userId)별로 완전히 격리된 CozybridgeDatabase 인스턴스를 반환합니다.
  */
-export function getScopedDatabase(userId?: string | null): LineboundDatabase {
+export function getScopedDatabase(userId?: string | null): CozybridgeDatabase {
   const dbName = getScopedDatabaseName(userId);
   let db = scopedDbCache.get(dbName);
   if (!db) {
-    db = new LineboundDatabase(dbName);
+    db = new CozybridgeDatabase(dbName);
     scopedDbCache.set(dbName, db);
   }
   return db;

@@ -1,9 +1,9 @@
-import type { EntityId } from '@linebound/domain';
-import { LEVELS, type LevelDefinition } from '@linebound/content';
+import type { EntityId } from '@cozybridge/domain';
+import { LEVELS, type LevelDefinition } from '@cozybridge/content';
 import type {
   ILevelProgressRepository,
   LevelProgressRecord,
-} from '@linebound/infrastructure';
+} from '@cozybridge/infrastructure';
 
 export interface LevelItemView {
   level: LevelDefinition;

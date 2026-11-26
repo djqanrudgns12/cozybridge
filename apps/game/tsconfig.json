@@ -7,11 +7,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@linebound/domain": ["../../packages/domain/src"],
-      "@linebound/simulation": ["../../packages/simulation/src"],
-      "@linebound/content": ["../../packages/content/src"],
-      "@linebound/infrastructure": ["../../packages/infrastructure/src"],
-      "@linebound/application": ["../../packages/application/src"]
+      "@cozybridge/domain": ["../../packages/domain/src"],
+      "@cozybridge/simulation": ["../../packages/simulation/src"],
+      "@cozybridge/content": ["../../packages/content/src"],
+      "@cozybridge/infrastructure": ["../../packages/infrastructure/src"],
+      "@cozybridge/application": ["../../packages/application/src"]
     }
   },
   "include": ["src/**/*"],

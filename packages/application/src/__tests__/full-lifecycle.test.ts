@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import 'fake-indexeddb/auto';
-import type { BridgeDesign } from '@linebound/domain';
+import type { BridgeDesign } from '@cozybridge/domain';
 import {
-  LineboundDatabase,
+  CozybridgeDatabase,
   IndexedDbDesignRepository,
   IndexedDbLevelProgressRepository,
   IndexedDbSyncQueueRepository,
@@ -10,7 +10,7 @@ import {
   LocalCurrencyRepository,
   SupabaseAuthService,
   SyncManager,
-} from '@linebound/infrastructure';
+} from '@cozybridge/infrastructure';
 import {
   SaveBridgeDesignUseCase,
   LoadBridgeDesignUseCase,
@@ -22,11 +22,11 @@ import {
   CommunityUseCase,
   HintUseCase,
 } from '../index.js';
-import { MatterBridgeEngine } from '@linebound/simulation';
-import { getLevelById } from '@linebound/content';
+import { MatterBridgeEngine } from '@cozybridge/simulation';
+import { getLevelById } from '@cozybridge/content';
 
-describe('Linebound 전체 생명주기 E2E 통합 검증 (PRD Part 12, Part 16)', () => {
-  let db: LineboundDatabase;
+describe('Cozybridge 전체 생명주기 E2E 통합 검증 (PRD Part 12, Part 16)', () => {
+  let db: CozybridgeDatabase;
   let designRepo: IndexedDbDesignRepository;
   let progressRepo: IndexedDbLevelProgressRepository;
   let syncQueue: IndexedDbSyncQueueRepository;
@@ -47,7 +47,7 @@ describe('Linebound 전체 생명주기 E2E 통합 검증 (PRD Part 12, Part 16)
   let physicsEngine: MatterBridgeEngine;
 
   beforeEach(() => {
-    db = new LineboundDatabase(`e2e_test_${Date.now()}_${Math.random()}`);
+    db = new CozybridgeDatabase(`e2e_test_${Date.now()}_${Math.random()}`);
     designRepo = new IndexedDbDesignRepository(db);
     progressRepo = new IndexedDbLevelProgressRepository(db);
     syncQueue = new IndexedDbSyncQueueRepository(db);
@@ -178,7 +178,7 @@ describe('Linebound 전체 생명주기 E2E 통합 검증 (PRD Part 12, Part 16)
     expect(syncRes.processed).toBe(0);
 
     // 온라인 계정으로 로그인 후 동기화 재시도
-    await authUseCase.signIn('online-engineer@linebound.com', 'password123');
+    await authUseCase.signIn('online-engineer@cozybridge.com', 'password123');
     syncRes = await syncUseCase.syncNow();
     expect(syncRes.succeeded).toBe(1);
     expect(await syncUseCase.getPendingCount()).toBe(0);

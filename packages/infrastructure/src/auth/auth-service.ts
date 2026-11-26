@@ -21,9 +21,9 @@ interface LocalAccountProfile {
   passwordHash?: string;
 }
 
-const ACTIVE_SESSION_STORAGE_KEY = 'linebound:active-session:v1';
-const ACCOUNT_REGISTRY_STORAGE_KEY = 'linebound:auth-accounts:v1';
-const GUEST_NICKNAME_STORAGE_KEY = 'linebound:guest-nickname:v1';
+const ACTIVE_SESSION_STORAGE_KEY = 'cozybridge:active-session:v1';
+const ACCOUNT_REGISTRY_STORAGE_KEY = 'cozybridge:auth-accounts:v1';
+const GUEST_NICKNAME_STORAGE_KEY = 'cozybridge:guest-nickname:v1';
 
 const DUPLICATE_EMAIL_ERROR_MESSAGE =
   '이미 가입된 이메일 주소예요. [로그인하기] 탭에서 로그인해 주세요.';
@@ -50,7 +50,7 @@ async function hashAccountPassword(
   normalizedEmail: string,
   password: string,
 ): Promise<string> {
-  const input = `linebound-auth:v1:${normalizedEmail}:${password}`;
+  const input = `cozybridge-auth:v1:${normalizedEmail}:${password}`;
 
   if (
     typeof globalThis !== 'undefined' &&
@@ -345,7 +345,7 @@ export class SupabaseAuthService implements IAuthService {
 
     const guest: UserSession = {
       userId: 'local-guest',
-      email: 'guest@linebound.local',
+      email: 'guest@cozybridge.local',
       displayName: trimmed || savedGuestName || '게스트 엔지니어',
       isOffline: true,
     };

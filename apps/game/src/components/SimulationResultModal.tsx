@@ -1,5 +1,5 @@
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
-import type { FailureReport } from '@linebound/domain';
+import type { FailureReport } from '@cozybridge/domain';
 import {
   AlertTriangleIcon,
   ArrowRightIcon,
@@ -84,45 +84,45 @@ function CauseDiagramSvg({ kind }: { kind: FriendlyFailureGuide['kind'] }) {
   if (kind === 'blocked') {
     return (
       <svg viewBox="0 0 180 76" className="w-full h-20 block">
-        <line x1="18" y1="54" x2="162" y2="54" stroke="var(--lb-ink)" strokeWidth="4" strokeLinecap="round" />
-        <polygon points="82,54 106,20 130,54" fill="none" stroke="var(--lb-danger)" strokeWidth="3.8" strokeLinejoin="round" />
-        <rect x="34" y="36" width="34" height="13" rx="3" fill="var(--lb-primary)" />
-        <circle cx="43" cy="51" r="4" fill="var(--lb-ink)" />
-        <circle cx="60" cy="51" r="4" fill="var(--lb-ink)" />
-        <path d="M73 34 L81 42 M81 34 L73 42" stroke="var(--lb-danger)" strokeWidth="2.8" strokeLinecap="round" />
-        <circle cx="18" cy="54" r="5" fill="var(--lb-amber)" />
-        <circle cx="162" cy="54" r="5" fill="var(--lb-amber)" />
+        <line x1="18" y1="54" x2="162" y2="54" stroke="var(--cb-ink)" strokeWidth="4" strokeLinecap="round" />
+        <polygon points="82,54 106,20 130,54" fill="none" stroke="var(--cb-danger)" strokeWidth="3.8" strokeLinejoin="round" />
+        <rect x="34" y="36" width="34" height="13" rx="3" fill="var(--cb-primary)" />
+        <circle cx="43" cy="51" r="4" fill="var(--cb-ink)" />
+        <circle cx="60" cy="51" r="4" fill="var(--cb-ink)" />
+        <path d="M73 34 L81 42 M81 34 L73 42" stroke="var(--cb-danger)" strokeWidth="2.8" strokeLinecap="round" />
+        <circle cx="18" cy="54" r="5" fill="var(--cb-amber)" />
+        <circle cx="162" cy="54" r="5" fill="var(--cb-amber)" />
       </svg>
     );
   }
   if (kind === 'gap') {
     return (
       <svg viewBox="0 0 180 76" className="w-full h-20 block">
-        <line x1="18" y1="36" x2="72" y2="36" stroke="var(--lb-danger)" strokeWidth="4" strokeLinecap="round" />
-        <line x1="114" y1="36" x2="162" y2="36" stroke="var(--lb-danger)" strokeWidth="4" strokeLinecap="round" />
-        <circle cx="18" cy="36" r="5" fill="var(--lb-amber)" />
-        <circle cx="162" cy="36" r="5" fill="var(--lb-amber)" />
-        <path d="M84 26 Q98 44 96 64" fill="none" stroke="var(--lb-danger)" strokeWidth="2.5" strokeDasharray="4 3" />
+        <line x1="18" y1="36" x2="72" y2="36" stroke="var(--cb-danger)" strokeWidth="4" strokeLinecap="round" />
+        <line x1="114" y1="36" x2="162" y2="36" stroke="var(--cb-danger)" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="18" cy="36" r="5" fill="var(--cb-amber)" />
+        <circle cx="162" cy="36" r="5" fill="var(--cb-amber)" />
+        <path d="M84 26 Q98 44 96 64" fill="none" stroke="var(--cb-danger)" strokeWidth="2.5" strokeDasharray="4 3" />
       </svg>
     );
   }
   if (kind === 'snap') {
     return (
       <svg viewBox="0 0 180 76" className="w-full h-20 block">
-        <line x1="20" y1="38" x2="76" y2="48" stroke="var(--lb-danger)" strokeWidth="4.2" strokeLinecap="round" />
-        <line x1="104" y1="48" x2="160" y2="38" stroke="var(--lb-danger)" strokeWidth="4.2" strokeLinecap="round" />
-        <path d="M84 36 L94 54 M96 36 L86 54" stroke="var(--lb-danger)" strokeWidth="2.8" strokeLinecap="round" />
-        <circle cx="20" cy="38" r="5" fill="var(--lb-amber)" />
-        <circle cx="160" cy="38" r="5" fill="var(--lb-amber)" />
+        <line x1="20" y1="38" x2="76" y2="48" stroke="var(--cb-danger)" strokeWidth="4.2" strokeLinecap="round" />
+        <line x1="104" y1="48" x2="160" y2="38" stroke="var(--cb-danger)" strokeWidth="4.2" strokeLinecap="round" />
+        <path d="M84 36 L94 54 M96 36 L86 54" stroke="var(--cb-danger)" strokeWidth="2.8" strokeLinecap="round" />
+        <circle cx="20" cy="38" r="5" fill="var(--cb-amber)" />
+        <circle cx="160" cy="38" r="5" fill="var(--cb-amber)" />
       </svg>
     );
   }
   return (
     <svg viewBox="0 0 180 76" className="w-full h-20 block">
-      <path d="M20 30 Q90 68 160 30" fill="none" stroke="var(--lb-danger)" strokeWidth="4" strokeDasharray="6 4" strokeLinecap="round" />
-      <path d="M90 22 L90 48 M83 41 L90 49 L97 41" fill="none" stroke="var(--lb-danger)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="20" cy="30" r="5" fill="var(--lb-amber)" />
-      <circle cx="160" cy="30" r="5" fill="var(--lb-amber)" />
+      <path d="M20 30 Q90 68 160 30" fill="none" stroke="var(--cb-danger)" strokeWidth="4" strokeDasharray="6 4" strokeLinecap="round" />
+      <path d="M90 22 L90 48 M83 41 L90 49 L97 41" fill="none" stroke="var(--cb-danger)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="20" cy="30" r="5" fill="var(--cb-amber)" />
+      <circle cx="160" cy="30" r="5" fill="var(--cb-amber)" />
     </svg>
   );
 }
@@ -130,16 +130,16 @@ function CauseDiagramSvg({ kind }: { kind: FriendlyFailureGuide['kind'] }) {
 function SolutionDiagramSvg() {
   return (
     <svg viewBox="0 0 180 76" className="w-full h-20 block">
-      <rect x="74" y="8" width="32" height="10" rx="2.5" fill="var(--lb-sage)" opacity="0.85" />
-      <line x1="22" y1="24" x2="158" y2="24" stroke="var(--lb-sage)" strokeWidth="4" strokeLinecap="round" />
-      <polygon points="22,24 67,58 90,24" fill="none" stroke="var(--lb-sage)" strokeWidth="3.3" strokeLinejoin="round" />
-      <polygon points="90,24 113,58 158,24" fill="none" stroke="var(--lb-sage)" strokeWidth="3.3" strokeLinejoin="round" />
-      <line x1="67" y1="58" x2="113" y2="58" stroke="var(--lb-sage)" strokeWidth="3.3" strokeLinecap="round" />
-      <circle cx="22" cy="24" r="5" fill="var(--lb-amber)" />
-      <circle cx="90" cy="24" r="4" fill="var(--lb-sage)" />
-      <circle cx="67" cy="58" r="4" fill="var(--lb-sage)" />
-      <circle cx="113" cy="58" r="4" fill="var(--lb-sage)" />
-      <circle cx="158" cy="24" r="5" fill="var(--lb-amber)" />
+      <rect x="74" y="8" width="32" height="10" rx="2.5" fill="var(--cb-sage)" opacity="0.85" />
+      <line x1="22" y1="24" x2="158" y2="24" stroke="var(--cb-sage)" strokeWidth="4" strokeLinecap="round" />
+      <polygon points="22,24 67,58 90,24" fill="none" stroke="var(--cb-sage)" strokeWidth="3.3" strokeLinejoin="round" />
+      <polygon points="90,24 113,58 158,24" fill="none" stroke="var(--cb-sage)" strokeWidth="3.3" strokeLinejoin="round" />
+      <line x1="67" y1="58" x2="113" y2="58" stroke="var(--cb-sage)" strokeWidth="3.3" strokeLinecap="round" />
+      <circle cx="22" cy="24" r="5" fill="var(--cb-amber)" />
+      <circle cx="90" cy="24" r="4" fill="var(--cb-sage)" />
+      <circle cx="67" cy="58" r="4" fill="var(--cb-sage)" />
+      <circle cx="113" cy="58" r="4" fill="var(--cb-sage)" />
+      <circle cx="158" cy="24" r="5" fill="var(--cb-amber)" />
     </svg>
   );
 }
@@ -189,7 +189,7 @@ export function SimulationResultModal({
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
       <div
         className="fixed inset-0 backdrop-blur-[2px] transition-opacity"
-        style={{ backgroundColor: 'var(--lb-backdrop)' }}
+        style={{ backgroundColor: 'var(--cb-backdrop)' }}
       />
 
       <div className="fixed inset-0 flex items-center justify-center p-5">
@@ -380,7 +380,7 @@ export function SimulationResultModal({
               className={`flex-1 rounded-[14px] px-5 py-3 text-sm font-extrabold transition-all cursor-pointer ${
                 isSuccess
                   ? 'bg-craft-bg border-[1.5px] border-craft-border-strong text-craft-ink hover:bg-craft-subtle'
-                  : 'bg-craft-primary hover:bg-craft-primary-hover text-white shadow-[0_3px_0_var(--lb-primary-shadow)] active:translate-y-0.5'
+                  : 'bg-craft-primary hover:bg-craft-primary-hover text-white shadow-[0_3px_0_var(--cb-primary-shadow)] active:translate-y-0.5'
               }`}
             >
               {isSuccess ? '내 다리 다시 보기' : '바로 고치러 가기'}

@@ -1,4 +1,4 @@
-import type { IAuthService, UserSession } from '@linebound/infrastructure';
+import type { IAuthService, UserSession } from '@cozybridge/infrastructure';
 
 const MAX_NICKNAME_LENGTH = 16;
 

@@ -42,13 +42,13 @@ export function ConfirmDialog({
   const confirmBtnClass =
     tone === 'danger'
       ? 'bg-craft-danger text-white hover:opacity-95 shadow-[0_3px_0_rgba(0,0,0,0.18)]'
-      : 'bg-craft-primary text-white hover:bg-craft-primary-hover shadow-[0_3px_0_var(--lb-primary-shadow)]';
+      : 'bg-craft-primary text-white hover:bg-craft-primary-hover shadow-[0_3px_0_var(--cb-primary-shadow)]';
 
   return (
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
       <div
         className="fixed inset-0 backdrop-blur-[2px] transition-opacity"
-        style={{ backgroundColor: 'var(--lb-backdrop)' }}
+        style={{ backgroundColor: 'var(--cb-backdrop)' }}
       />
 
       <div className="fixed inset-0 flex items-center justify-center p-5">

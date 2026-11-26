@@ -1,14 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import 'fake-indexeddb/auto';
-import { LineboundDatabase } from '../db/linebound-db.js';
+import { CozybridgeDatabase } from '../db/cozybridge-db.js';
 import { IndexedDbLevelProgressRepository } from '../repositories/level-progress-repository.js';
 
 describe('IndexedDbLevelProgressRepository 테스트', () => {
-  let db: LineboundDatabase;
+  let db: CozybridgeDatabase;
   let repo: IndexedDbLevelProgressRepository;
 
   beforeEach(() => {
-    db = new LineboundDatabase(`test_level_db_${Date.now()}_${Math.random()}`);
+    db = new CozybridgeDatabase(`test_level_db_${Date.now()}_${Math.random()}`);
     repo = new IndexedDbLevelProgressRepository(db);
   });
 

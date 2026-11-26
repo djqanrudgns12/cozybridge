@@ -2,5 +2,5 @@
 pub fn run() {
     tauri::Builder::default()
         .run(tauri::generate_context!())
-        .expect("error while running Linebound desktop application");
+        .expect("error while running Cozybridge desktop application");
 }

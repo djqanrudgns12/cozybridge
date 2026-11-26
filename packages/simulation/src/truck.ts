@@ -1,5 +1,5 @@
 import Matter from 'matter-js';
-import type { GridPoint } from '@linebound/domain';
+import type { GridPoint } from '@cozybridge/domain';
 
 export const COLLISION_CATEGORY = {
   TERRAIN: 0x0001,

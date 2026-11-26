@@ -1,5 +1,5 @@
-import { AuthUseCase } from '@linebound/application';
-import { SupabaseAuthService } from '@linebound/infrastructure';
+import { AuthUseCase } from '@cozybridge/application';
+import { SupabaseAuthService } from '@cozybridge/infrastructure';
 
 const metaEnv = (
   import.meta as ImportMeta & { env?: Record<string, string | undefined> }

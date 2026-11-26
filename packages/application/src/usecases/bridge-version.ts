@@ -2,8 +2,8 @@ import type {
   BridgeDesign,
   BridgeVersion,
   EntityId,
-} from '@linebound/domain';
-import type { IDesignRepository } from '@linebound/infrastructure';
+} from '@cozybridge/domain';
+import type { IDesignRepository } from '@cozybridge/infrastructure';
 
 /**
  * 설계 버전 생성 유스케이스 (PRD 6.12)

@@ -1,9 +1,9 @@
-import type { EntityId, SyncOperationType } from '@linebound/domain';
+import type { EntityId, SyncOperationType } from '@cozybridge/domain';
 import type {
   ISyncQueueRepository,
   SyncManager,
   SyncResult,
-} from '@linebound/infrastructure';
+} from '@cozybridge/infrastructure';
 
 /**
  * 온라인 동기화 유스케이스 (PRD 6.13)

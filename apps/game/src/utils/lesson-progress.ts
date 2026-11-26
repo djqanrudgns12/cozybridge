@@ -1,12 +1,12 @@
 import { resolveEffectiveStorageScope } from './user-storage';
 
-const GUEST_LESSON_PROGRESS_KEY = 'linebound:completed-lessons:v1';
+const GUEST_LESSON_PROGRESS_KEY = 'cozybridge:completed-lessons:v1';
 
 function getLessonProgressStorageKey(userId?: string | null): string {
   const scope = resolveEffectiveStorageScope(userId);
   return scope === 'guest'
     ? GUEST_LESSON_PROGRESS_KEY
-    : `linebound:completed-lessons:v2:${scope}`;
+    : `cozybridge:completed-lessons:v2:${scope}`;
 }
 
 export function getCompletedLessonIds(userId?: string | null): Set<string> {

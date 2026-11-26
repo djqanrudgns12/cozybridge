@@ -5,7 +5,7 @@ type IconProps = SVGProps<SVGSVGElement> & {
 };
 
 /**
- * Linebound 전 영역 공통 벡터 아이콘 세트 (2px 균일 스트로크, 라운드 캡)
+ * Cozybridge 전 영역 공통 벡터 아이콘 세트 (2px 균일 스트로크, 라운드 캡)
  * 깨지는 비표준 유니코드 문자 및 유치한 인라인 이모지를 100% 대체합니다.
  */
 

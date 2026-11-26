@@ -14,19 +14,19 @@ import type {
   BridgeVersion,
   PublicDesignItem,
   ReactionType,
-} from '@linebound/domain';
-import { getLevelById } from '@linebound/content';
+} from '@cozybridge/domain';
+import { getLevelById } from '@cozybridge/content';
 import {
   LoadBridgeDesignUseCase,
   CreateBridgeVersionUseCase,
   RestoreBridgeVersionUseCase,
   CommunityUseCase,
-} from '@linebound/application';
+} from '@cozybridge/application';
 import {
-  LineboundDatabase,
+  CozybridgeDatabase,
   IndexedDbDesignRepository,
   CommunityRepository,
-} from '@linebound/infrastructure';
+} from '@cozybridge/infrastructure';
 import {
   getUserDatabase,
   resolveEffectiveStorageScope,
@@ -94,7 +94,7 @@ function getHubServices(userId?: string | null) {
   }
 
   if (!sharedCommunityUseCase) {
-    const publicDb = new LineboundDatabase('linebound_public_community_db');
+    const publicDb = new CozybridgeDatabase('cozybridge_public_community_db');
     const communityRepo = new CommunityRepository(publicDb);
     sharedCommunityUseCase = new CommunityUseCase(communityRepo);
   }
@@ -264,7 +264,7 @@ export function BridgeHubModal({
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
       <div
         className="fixed inset-0 backdrop-blur-[2px] transition-opacity"
-        style={{ backgroundColor: 'var(--lb-backdrop)' }}
+        style={{ backgroundColor: 'var(--cb-backdrop)' }}
       />
 
       <div className="fixed inset-0 flex items-center justify-center p-5">
@@ -417,7 +417,7 @@ export function BridgeHubModal({
                                   onSelectDesign(design);
                                   onClose();
                                 }}
-                                className="rounded-[10px] bg-craft-primary hover:bg-craft-primary-hover px-4 py-2 text-xs font-extrabold text-white shadow-[0_2px_0_var(--lb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer"
+                                className="rounded-[10px] bg-craft-primary hover:bg-craft-primary-hover px-4 py-2 text-xs font-extrabold text-white shadow-[0_2px_0_var(--cb-primary-shadow)] active:translate-y-0.5 transition-all cursor-pointer"
                               >
                                 불러오기
                               </button>
@@ -555,7 +555,7 @@ export function BridgeHubModal({
                         <button
                           type="button"
                           onClick={() => void handleClonePublic(item)}
-                          className="flex items-center justify-center gap-1.5 rounded-[12px] bg-craft-primary hover:bg-craft-primary-hover px-4 py-2.5 text-xs font-extrabold text-white shadow-[0_2px_0_var(--lb-primary-shadow)] active:translate-y-0.5 shrink-0 transition-all cursor-pointer"
+                          className="flex items-center justify-center gap-1.5 rounded-[12px] bg-craft-primary hover:bg-craft-primary-hover px-4 py-2.5 text-xs font-extrabold text-white shadow-[0_2px_0_var(--cb-primary-shadow)] active:translate-y-0.5 shrink-0 transition-all cursor-pointer"
                         >
                           <CopyWorkspaceIcon size={15} />
                           <span>내 작업실로 복사</span>

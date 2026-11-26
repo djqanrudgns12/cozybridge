@@ -10,7 +10,7 @@ import {
   type ThemeId,
 } from './design-tokens';
 
-const STORAGE_KEY = 'linebound-ui-theme';
+const STORAGE_KEY = 'cozybridge-ui-theme';
 
 interface ThemeContextValue {
   theme: ThemeId;

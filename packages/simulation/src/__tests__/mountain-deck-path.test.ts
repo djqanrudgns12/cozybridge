@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { LEVELS } from '@linebound/content';
-import type { BridgeDesign, BridgeNode, LevelDefinition } from '@linebound/domain';
+import { LEVELS } from '@cozybridge/content';
+import type { BridgeDesign, BridgeNode, LevelDefinition } from '@cozybridge/domain';
 import { MatterBridgeEngine } from '../matter-bridge-engine.js';
 
 type P = { x: number; y: number };

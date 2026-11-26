@@ -4,8 +4,8 @@ import {
   LEVELS,
   SANDBOX_DEFAULT,
   type LevelDefinition,
-} from '@linebound/content';
-import type { BridgeDesign, BridgeNode } from '@linebound/domain';
+} from '@cozybridge/content';
+import type { BridgeDesign, BridgeNode } from '@cozybridge/domain';
 import {
   computeInitialTruckSpawn,
   MatterBridgeEngine,

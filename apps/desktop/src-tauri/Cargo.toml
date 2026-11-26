@@ -1,12 +1,12 @@
 [package]
-name = "linebound-desktop"
-version = "0.1.0"
-description = "Linebound Bridge Building Puzzle Game"
-authors = ["Linebound Team"]
+name = "cozybridge-desktop"
+version = "1.0.0"
+description = "Cozybridge Bridge Building Puzzle Game"
+authors = ["Cozybridge Team"]
 edition = "2021"
 
 [lib]
-name = "linebound_desktop_lib"
+name = "cozybridge_desktop_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
